@@ -14,12 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 
+ *
  * @author PierooA.S
  */
 public class GestorDeCitas {
     
-    //Se crean la Listas 
     public static List<Cita> citasEnElSistema;
     public static List<Paciente> listaDePacientes;
     public static List<Medico> listaDeMedicos;
@@ -34,6 +33,8 @@ public class GestorDeCitas {
         listaDePacientes=new ArrayList<>();
         listaDeMedicos=new ArrayList<>();
         
+        horasDisponibles.add("8:00am");
+        horasDisponibles.add("8:30am");
         horasDisponibles.add("9:00am");
         horasDisponibles.add("9:30am");
         horasDisponibles.add("10:00am");
@@ -48,6 +49,8 @@ public class GestorDeCitas {
         fechasDisponibles.add("07/05/2023");
         fechasDisponibles.add("08/05/2023");
         fechasDisponibles.add("09/05/2023");
+        fechasDisponibles.add("10/05/2023");
+        fechasDisponibles.add("11/05/2023");
         
         
         //Inicio la ventana principal de gestor de citas.

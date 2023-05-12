@@ -32,16 +32,16 @@ public class JFrameCita extends javax.swing.JFrame {
         initComponents();
         this.padre=padre;
         
-        cbEspecialidad.removeAllItems();
-        cbEspecialidad.setEnabled(false);
+        cb_especialidad.removeAllItems();
+        cb_especialidad.setEnabled(false);
         
-        cbHora.removeAllItems();
+        cb_hora.removeAllItems();
         for( String hora: GestorDeCitas.horasDisponibles){
-            cbHora.addItem(hora);
+            cb_hora.addItem(hora);
         }
-        cbFecha.removeAllItems();
+        cb_fecha.removeAllItems();
         for( String fecha: GestorDeCitas.fechasDisponibles){
-            cbFecha.addItem(fecha);
+            cb_fecha.addItem(fecha);
         }
         
         
@@ -52,20 +52,20 @@ public class JFrameCita extends javax.swing.JFrame {
         this.padre=padre;
         this.cita=cita;
         this.estoyEditando=true;
-        this.btnPaciente.setVisible(false);
-        this.btnMedico.setVisible(false);
-        this.btnGuardar.setVisible(false);
+        this.btn_bus_pac.setVisible(false);
+        this.btn_bus_med.setVisible(false);
+        this.btn_guardar.setVisible(false);
         lblTitulo.setText("Visualizar Cita");
-        this.txtMedico.setText(cita.getMedico().getDatosMostrar());
-        this.txtPaciente.setText(cita.getPaciente().getDatosMostrar());
-        cbEspecialidad.removeAllItems();
-        cbEspecialidad.addItem(cita.getEspecialidad().getNombre());
+        this.txt_med.setText(cita.getMedico().getDatosMostrar());
+        this.txt_pac.setText(cita.getPaciente().getDatosMostrar());
+        cb_especialidad.removeAllItems();
+        cb_especialidad.addItem(cita.getEspecialidad().getNombre());
         
-        cbFecha.removeAllItems();
-        cbFecha.addItem(GestorDeCitas.fechasDisponibles.get(cita.getFecha()));
+        cb_fecha.removeAllItems();
+        cb_fecha.addItem(GestorDeCitas.fechasDisponibles.get(cita.getFecha()));
         
-        cbHora.removeAllItems();
-        cbHora.addItem(GestorDeCitas.horasDisponibles.get(cita.getHora()));
+        cb_hora.removeAllItems();
+        cb_hora.addItem(GestorDeCitas.horasDisponibles.get(cita.getHora()));
         
         
         
@@ -80,59 +80,59 @@ public class JFrameCita extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtPaciente = new javax.swing.JTextField();
-        txtMedico = new javax.swing.JTextField();
-        btnPaciente = new javax.swing.JButton();
-        btnMedico = new javax.swing.JButton();
-        cbEspecialidad = new javax.swing.JComboBox<>();
-        cbFecha = new javax.swing.JComboBox<>();
-        cbHora = new javax.swing.JComboBox<>();
-        btnSalir = new javax.swing.JButton();
-        btnGuardar = new javax.swing.JButton();
+        txt_pac = new javax.swing.JTextField();
+        txt_med = new javax.swing.JTextField();
+        btn_bus_pac = new javax.swing.JButton();
+        btn_bus_med = new javax.swing.JButton();
+        cb_especialidad = new javax.swing.JComboBox<>();
+        cb_fecha = new javax.swing.JComboBox<>();
+        cb_hora = new javax.swing.JComboBox<>();
+        btn_salir = new javax.swing.JButton();
+        btn_guardar = new javax.swing.JButton();
         lblTitulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        btnPaciente.setText("Buscar Paciente");
-        btnPaciente.addActionListener(new java.awt.event.ActionListener() {
+        btn_bus_pac.setText("Buscar Paciente");
+        btn_bus_pac.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPacienteActionPerformed(evt);
+                btn_bus_pacActionPerformed(evt);
             }
         });
 
-        btnMedico.setText("Buscar Medico");
-        btnMedico.addActionListener(new java.awt.event.ActionListener() {
+        btn_bus_med.setText("Buscar Medico");
+        btn_bus_med.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnMedicoActionPerformed(evt);
+                btn_bus_medActionPerformed(evt);
             }
         });
 
-        cbEspecialidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        cbEspecialidad.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+        cb_especialidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cb_especialidad.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                cbEspecialidadPropertyChange(evt);
+                cb_especialidadPropertyChange(evt);
             }
         });
 
-        cbFecha.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cb_fecha.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        cbHora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cb_hora.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        btnSalir.setText("Salir");
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+        btn_salir.setText("Salir");
+        btn_salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
+                btn_salirActionPerformed(evt);
             }
         });
 
-        btnGuardar.setText("Guardar");
-        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+        btn_guardar.setText("Guardar");
+        btn_guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGuardarActionPerformed(evt);
+                btn_guardarActionPerformed(evt);
             }
         });
 
-        lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         lblTitulo.setText("Nueva Cita");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -144,87 +144,89 @@ public class JFrameCita extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cbEspecialidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtMedico, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
-                            .addComponent(txtPaciente, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cb_especialidad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txt_med, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 233, Short.MAX_VALUE)
+                            .addComponent(txt_pac, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(cbFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cb_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(cbHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btnSalir))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(btnPaciente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnMedico, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnGuardar, javax.swing.GroupLayout.Alignment.LEADING)))
+                                .addComponent(cb_hora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btn_salir))
+                        .addGap(39, 39, 39)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_guardar)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(btn_bus_pac, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btn_bus_med, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(lblTitulo)))
+                        .addGap(20, 20, 20)
+                        .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblTitulo)
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(txtPaciente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtMedico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnPaciente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnMedico)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cbEspecialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23)
+                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                        .addComponent(btnSalir)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnGuardar)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(txt_pac, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_bus_pac))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txt_med, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_bus_med))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cb_especialidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cb_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cb_hora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_salir)
+                    .addComponent(btn_guardar))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+    private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
         // TODO add your handling code here:
         salir();
-    }//GEN-LAST:event_btnSalirActionPerformed
+    }//GEN-LAST:event_btn_salirActionPerformed
 
-    private void btnMedicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMedicoActionPerformed
+    private void btn_bus_medActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_bus_medActionPerformed
         // TODO add your handling code here:
         
         JFrameMedicos pantallaMedicos=new JFrameMedicos(this);
         pantallaMedicos.setLocationRelativeTo(this);
         pantallaMedicos.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_btnMedicoActionPerformed
+    }//GEN-LAST:event_btn_bus_medActionPerformed
 
-    private void btnPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPacienteActionPerformed
+    private void btn_bus_pacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_bus_pacActionPerformed
         // TODO add your handling code here:
         JFramePacientes pantallaPacientes=new JFramePacientes(this);
         pantallaPacientes.setLocationRelativeTo(this);
         pantallaPacientes.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_btnPacienteActionPerformed
+    }//GEN-LAST:event_btn_bus_pacActionPerformed
 
     public void guardarCita(){
+       
+        if(medicoSeleccionado!=null &&pacienteSeleccionado!=null){
+            int indiceSeleccionado=cb_especialidad.getSelectedIndex();
+            especialidadSeleccionada = medicoSeleccionado.getEspecialidades().get(indiceSeleccionado);
         
-        
-        if(medicoSeleccionado!=null &&pacienteSeleccionado!=null&&especialidadSeleccionada!=null){
             cita = new Cita(medicoSeleccionado,pacienteSeleccionado,especialidadSeleccionada);
+            
+            cita.setFecha(cb_fecha.getSelectedIndex());
+            cita.setHora(cb_hora.getSelectedIndex());
+            
             this.padre.agregarCita(cita);
+            
         }
         
         
@@ -233,16 +235,17 @@ public class JFrameCita extends javax.swing.JFrame {
     
     public void setPaciente(Paciente paciente){
         this.pacienteSeleccionado=paciente;
-        txtPaciente.setText(paciente.getDatosMostrar());
+        txt_pac.setText(paciente.getDatosMostrar());
     }
     public void setMedico(Medico medico){
         this.medicoSeleccionado=medico;
         
-        cbEspecialidad.removeAllItems();
+        txt_med.setText(this.medicoSeleccionado.getDatosMostrar());
+        cb_especialidad.removeAllItems();
         for(Especialidad espec : medico.getEspecialidades()){
-            cbEspecialidad.addItem(espec.getNombre());
+            cb_especialidad.addItem(espec.getNombre());
         }
-        cbEspecialidad.setEnabled(true);
+        cb_especialidad.setEnabled(true);
         
         
     }
@@ -250,20 +253,20 @@ public class JFrameCita extends javax.swing.JFrame {
         this.especialidadSeleccionada=especialidad;
     }
     
-    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+    private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
         // TODO add your handling code here:
         guardarCita();
         salir();
-    }//GEN-LAST:event_btnGuardarActionPerformed
+    }//GEN-LAST:event_btn_guardarActionPerformed
 
-    private void cbEspecialidadPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_cbEspecialidadPropertyChange
+    private void cb_especialidadPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_cb_especialidadPropertyChange
         // TODO add your handling code here:
         if(this.medicoSeleccionado!=null){
-            Especialidad Espec =this.medicoSeleccionado.getEspecialidades().get(cbEspecialidad.getSelectedIndex());
+            Especialidad Espec =this.medicoSeleccionado.getEspecialidades().get(cb_especialidad.getSelectedIndex());
         setEspecialidad(Espec);
         }
         
-    }//GEN-LAST:event_cbEspecialidadPropertyChange
+    }//GEN-LAST:event_cb_especialidadPropertyChange
 
     /**
      * Debe abrir la ventana Paciente y 
@@ -325,15 +328,15 @@ public class JFrameCita extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnGuardar;
-    private javax.swing.JButton btnMedico;
-    private javax.swing.JButton btnPaciente;
-    private javax.swing.JButton btnSalir;
-    private javax.swing.JComboBox<String> cbEspecialidad;
-    private javax.swing.JComboBox<String> cbFecha;
-    private javax.swing.JComboBox<String> cbHora;
+    private javax.swing.JButton btn_bus_med;
+    private javax.swing.JButton btn_bus_pac;
+    private javax.swing.JButton btn_guardar;
+    private javax.swing.JButton btn_salir;
+    private javax.swing.JComboBox<String> cb_especialidad;
+    private javax.swing.JComboBox<String> cb_fecha;
+    private javax.swing.JComboBox<String> cb_hora;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JTextField txtMedico;
-    private javax.swing.JTextField txtPaciente;
+    private javax.swing.JTextField txt_med;
+    private javax.swing.JTextField txt_pac;
     // End of variables declaration//GEN-END:variables
 }

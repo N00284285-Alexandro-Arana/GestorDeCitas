@@ -44,10 +44,10 @@ public class JFrameGestorDeCitas extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         lstCitas = new javax.swing.JList<>();
-        txtBuscar = new javax.swing.JTextField();
-        btnBuscar = new javax.swing.JButton();
-        btnCancelar = new javax.swing.JButton();
-        btnCrear = new javax.swing.JButton();
+        txt_buscar = new javax.swing.JTextField();
+        btn_buscar = new javax.swing.JButton();
+        btn_cancelar_cita = new javax.swing.JButton();
+        btn_crear_cita = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         jButton3.setText("jButton3");
@@ -59,37 +59,42 @@ public class JFrameGestorDeCitas extends javax.swing.JFrame {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        lstCitas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lstCitasMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(lstCitas);
 
-        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
+        txt_buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscarActionPerformed(evt);
+                txt_buscarActionPerformed(evt);
             }
         });
 
-        btnBuscar.setText("Buscar");
-        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+        btn_buscar.setText("Buscar");
+        btn_buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarActionPerformed(evt);
+                btn_buscarActionPerformed(evt);
             }
         });
 
-        btnCancelar.setText("Cancelar Cita");
-        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+        btn_cancelar_cita.setText("Cancelar Cita");
+        btn_cancelar_cita.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelarActionPerformed(evt);
+                btn_cancelar_citaActionPerformed(evt);
             }
         });
 
-        btnCrear.setText("Nueva Cita");
-        btnCrear.addActionListener(new java.awt.event.ActionListener() {
+        btn_crear_cita.setText("Nueva Cita");
+        btn_crear_cita.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCrearActionPerformed(evt);
+                btn_crear_citaActionPerformed(evt);
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setText("Gestión De Citas");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setText("Gestor de Citas");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,54 +102,56 @@ public class JFrameGestorDeCitas extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnCancelar)
-                                .addGap(141, 141, 141)
-                                .addComponent(btnCrear))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(37, 37, 37)
-                                    .addComponent(btnBuscar))
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(23, Short.MAX_VALUE))))
+                                .addGap(22, 22, 22)
+                                .addComponent(btn_cancelar_cita)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
+                                .addComponent(btn_crear_cita)))
+                        .addGap(31, 31, 31))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37)
+                        .addComponent(btn_buscar)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel1)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(23, 23, 23)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscar))
+                    .addComponent(txt_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_buscar))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCancelar)
-                    .addComponent(btnCrear))
-                .addGap(11, 11, 11))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_crear_cita)
+                    .addComponent(btn_cancelar_cita))
+                .addGap(27, 27, 27))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarActionPerformed
+    private void txt_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_buscarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtBuscarActionPerformed
+    }//GEN-LAST:event_txt_buscarActionPerformed
 
-    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+    private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
         // TODO add your handling code here:
-        volverACargarCitas(txtBuscar.getText().trim());
+        volverACargarCitas(txt_buscar.getText().trim());
  
-    }//GEN-LAST:event_btnBuscarActionPerformed
+    }//GEN-LAST:event_btn_buscarActionPerformed
 
     
     //Ctrl + R para cambiar nombre de variables directamente en todo el proyecto
@@ -180,12 +187,17 @@ public class JFrameGestorDeCitas extends javax.swing.JFrame {
         
         
     }
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+    private void btn_cancelar_citaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelar_citaActionPerformed
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_btnCancelarActionPerformed
+        int index=lstCitas.getSelectedIndex();
+        listaCitas.remove(index);
+        volverACargarCitas("");
+        
+        
+    }//GEN-LAST:event_btn_cancelar_citaActionPerformed
 
-    private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
+    private void btn_crear_citaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_crear_citaActionPerformed
         // TODO add your handling code here:
         
         //Creo un objeto de la ventana cita
@@ -199,7 +211,18 @@ public class JFrameGestorDeCitas extends javax.swing.JFrame {
         //que es el gestor de citas 
         this.setVisible(false);
         
-    }//GEN-LAST:event_btnCrearActionPerformed
+    }//GEN-LAST:event_btn_crear_citaActionPerformed
+
+    private void lstCitasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstCitasMouseClicked
+        // TODO add your handling code here:
+        if(evt.getClickCount()>1){
+            JFrameCita cita= new JFrameCita(this,listaCitas.get(lstCitas.getSelectedIndex()));
+            cita.setLocationRelativeTo(null);
+            
+            cita.setVisible(true);
+            this.setVisible(false);
+        }
+    }//GEN-LAST:event_lstCitasMouseClicked
 
     /**
      * @param args the command line arguments
@@ -238,13 +261,13 @@ public class JFrameGestorDeCitas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnCrear;
+    private javax.swing.JButton btn_buscar;
+    private javax.swing.JButton btn_cancelar_cita;
+    private javax.swing.JButton btn_crear_cita;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList<String> lstCitas;
-    private javax.swing.JTextField txtBuscar;
+    private javax.swing.JTextField txt_buscar;
     // End of variables declaration//GEN-END:variables
 }
